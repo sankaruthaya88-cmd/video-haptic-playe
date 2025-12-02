@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Video + Haptic Player</title>
+</head>
+<body>
+  <h2>Video + Haptic Player</h2>
+  <video id="video" controls playsinline webkit-playsinline>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <script>
+    fetch("haptics.json").then(r=>r.json()).then(d=>navigator.vibrate(d.pattern));
+  </script>
+</body>
+</html>
